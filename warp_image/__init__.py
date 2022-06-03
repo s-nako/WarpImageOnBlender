@@ -29,8 +29,8 @@ bl_info = {
     "location": "",
     "version": (0, 8),
     "blender": (2, 80, 0),
-    "doc_url": "https://github.com/s-nako/ImageWarp",
-    "tracker_url": "https://github.com/s-nako/ImageWarp/issues",
+    "doc_url": "https://github.com/s-nako/WarpImageOnBlender",
+    "tracker_url": "https://github.com/s-nako/WarpImageOnBlender/issues",
     "category": "UV",
 }
 

@@ -20,11 +20,11 @@ import bpy
 from bpy.types import Panel
 
 
-class TEXTURE_WARP_PT_main_panel(Panel):
-    bl_label = "Texture Warp"
+class NK_WARP_IMAGE_PT_main_panel(Panel):
+    bl_label = "Warp Image"
     bl_space_type = 'IMAGE_EDITOR'
     bl_region_type = 'UI'
-    bl_category = 'Texture Warp'
+    bl_category = 'Warp Image'
 
     @classmethod
     def poll(cls, context):
@@ -33,12 +33,12 @@ class TEXTURE_WARP_PT_main_panel(Panel):
     def draw(self, context):
         layout = self.layout
         row = layout.row(align=True)
-        row.label(text="Texture Warp")
+        row.label(text="Warp Image")
 
         box = layout.box()
         row = box.column(align=True)
 
-        props = bpy.context.scene.tex_warp_props
+        props = bpy.context.scene.warp_img_props
         mesh = bpy.context.object.data
 
         row.prop_search(props, "src_uv", mesh, "uv_layers", text="Src UV")
@@ -46,17 +46,17 @@ class TEXTURE_WARP_PT_main_panel(Panel):
         row.prop_search(props, "src_image", bpy.data, "images", text="Src Image")
         row.prop(props, "dst_image_name", text="Dst Image Name")
 
-        row.operator("texture_warp.warp_main", text="Warp")
+        row.operator("warp_image.warp_main", text="Warp")
         row.prop(props, "save_image_path", text="Save Path")
-        row.operator("texture_warp.save_img", text="Save")
+        row.operator("warp_image.save_img", text="Save")
 
 
 def register():
-    bpy.utils.register_class(TEXTURE_WARP_PT_main_panel)
+    bpy.utils.register_class(NK_WARP_IMAGE_PT_main_panel)
 
 
 def unregister():
-    bpy.utils.unregister_class(TEXTURE_WARP_PT_main_panel)
+    bpy.utils.unregister_class(NK_WARP_IMAGE_PT_main_panel)
 
 
 if __name__ == '__main__':

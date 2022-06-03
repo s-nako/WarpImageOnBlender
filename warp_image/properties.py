@@ -21,7 +21,7 @@ from bpy.types import PropertyGroup
 from bpy.props import PointerProperty, BoolProperty, StringProperty
 
 
-class ImageWarpProps(PropertyGroup):
+class WarpImageProps(PropertyGroup):
     src_uv: StringProperty()
     dst_uv: StringProperty()
 
@@ -31,13 +31,13 @@ class ImageWarpProps(PropertyGroup):
 
 
 def register():
-    bpy.utils.register_class(ImageWarpProps)
-    bpy.types.Scene.tex_warp_props = bpy.props.PointerProperty(type=ImageWarpProps)
+    bpy.utils.register_class(WarpImageProps)
+    bpy.types.Scene.warp_img_props = bpy.props.PointerProperty(type=WarpImageProps)
 
 
 def unregister():
-    del bpy.types.Scene.tex_warp_props
-    bpy.utils.unregister_class(ImageWarpProps)
+    del bpy.types.Scene.warp_img_props
+    bpy.utils.unregister_class(WarpImageProps)
 
 
 if __name__ == '__main__':

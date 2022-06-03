@@ -23,7 +23,7 @@ from . import warp_image_main
 
 
 class NK_WARP_IMAGE_PT_warp(Operator):
-    bl_idname = 'texture_warp.warp_main'
+    bl_idname = 'warp_image.warp_main'
     bl_label = "Warp"
     bl_options = {'REGISTER'}
 
@@ -31,23 +31,23 @@ class NK_WARP_IMAGE_PT_warp(Operator):
         obj = bpy.context.active_object
         if not obj:
             return {'FINISHED'}
-        src_uv = bpy.context.scene.tex_warp_props.src_uv
-        dst_uv = bpy.context.scene.tex_warp_props.dst_uv
-        src_img = bpy.context.scene.tex_warp_props.src_image
-        dst_image_name = bpy.context.scene.tex_warp_props.dst_image_name
+        src_uv = bpy.context.scene.warp_img_props.src_uv
+        dst_uv = bpy.context.scene.warp_img_props.dst_uv
+        src_img = bpy.context.scene.warp_img_props.src_image
+        dst_image_name = bpy.context.scene.warp_img_props.dst_image_name
         if src_uv and dst_uv and src_img:
             warp_image_main.warp_main(obj, src_uv, dst_uv, src_img, dst_image_name)
         return {'FINISHED'}
 
 
 class NK_WARP_IMAGE_PT_save(Operator):
-    bl_idname = 'texture_warp.save_img'
+    bl_idname = 'warp_image.save_img'
     bl_label = "Save"
     bl_options = {'REGISTER'}
 
     def execute(self, context):
-        dst_image_name = bpy.context.scene.tex_warp_props.dst_image_name
-        save_image_path = bpy.context.scene.tex_warp_props.save_image_path
+        dst_image_name = bpy.context.scene.warp_img_props.dst_image_name
+        save_image_path = bpy.context.scene.warp_img_props.save_image_path
 
         warp_image_main.save_img(dst_image_name, save_image_path)
         return {'FINISHED'}

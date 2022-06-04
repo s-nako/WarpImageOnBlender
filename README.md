@@ -12,5 +12,8 @@ Click "Save" to save generated destination image into the path defined in "Save 
 ### Example of properties
 ![image](https://user-images.githubusercontent.com/47211856/171996174-f8aa1fe8-be90-418c-bdcc-7d7cc9c14230.png)
 
+## Caution
+Please note that we will not be liable for any damages caused by use of this add-on and scripts.
+
 ## Issues
 If you experience an issue or a bug or have any suggestion pr ideas about this addon, please create an issue.

@@ -22,7 +22,7 @@ from bpy.types import Operator
 from . import warp_image_main
 
 
-class NK_WARP_IMAGE_PT_warp(Operator):
+class NK_WARP_IMAGE_OT_warp(Operator):
     bl_idname = 'warp_image.warp_main'
     bl_label = "Warp"
     bl_options = {'REGISTER'}
@@ -40,7 +40,7 @@ class NK_WARP_IMAGE_PT_warp(Operator):
         return {'FINISHED'}
 
 
-class NK_WARP_IMAGE_PT_save(Operator):
+class NK_WARP_IMAGE_OT_save(Operator):
     bl_idname = 'warp_image.save_img'
     bl_label = "Save"
     bl_options = {'REGISTER'}
@@ -54,8 +54,8 @@ class NK_WARP_IMAGE_PT_save(Operator):
 
 
 classes = [
-    NK_WARP_IMAGE_PT_warp,
-    NK_WARP_IMAGE_PT_save
+    NK_WARP_IMAGE_OT_warp,
+    NK_WARP_IMAGE_OT_save
 ]
 
 
